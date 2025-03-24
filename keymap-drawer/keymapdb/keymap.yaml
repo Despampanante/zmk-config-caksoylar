@@ -1,6 +1,10 @@
-layout: {zmk_keyboard: hummingbird}
+draw_config:
+  footer_text: 'Created with <a href="https://github.com/caksoylar/keymap-drawer">keymap-drawer</a>'
+  dark_mode: false
+  glyph_tap_size: 16
+layout: {qmk_keyboard: rufous}
 layers:
-  DEF:
+  Base:
   - Q
   - W
   - F
@@ -28,72 +32,10 @@ layers:
   - ','
   - .
   - {t: Esc, h: Ctrl}
-  - {t: ␣, h: NAV}
-  - {t: ⌫, h: SYM}
-  - {t: ⏎, h: Shift}
-  BRD:
-  - X
-  - C
-  - L
-  - F
-  - B
-  - J
-  - Y
-  - O
-  - U
-  - ''''
-  - {t: R, h: Ctrl}
-  - {t: S, h: Gui}
-  - {t: N, h: Alt}
-  - {t: T, h: Shift}
-  - P
-  - K
-  - {t: H, h: Shift}
-  - {t: E, h: Alt}
-  - {t: I, h: Gui}
-  - {t: A, h: Ctrl}
-  - W
-  - M
-  - {t: G, h: MSE}
-  - D
-  - ','
-  - .
-  - {t: Esc, h: Ctrl}
-  - {t: ␣, h: NAV}
-  - {t: ⌫, h: SYM}
-  - {t: ⏎, h: Shift}
-  GME:
-  - ↹
-  - Q
-  - W
-  - E
-  - R
-  - Y
-  - U
-  - I
-  - O
-  - Esc
-  - Shift
-  - A
-  - S
-  - D
-  - F
-  - H
-  - J
-  - K
-  - L
-  - {t: GME, h: toggle}
-  - Z
-  - X
-  - C
-  - M
-  - ','
-  - .
-  - Alt
-  - ␣
-  - NAV
-  - ⏎
-  SYM:
+  - {t: $$mdi:keyboard-space$$, h: Nav}
+  - {t: $$mdi:backspace-outline$$, h: Sym}
+  - {t: $$mdi:keyboard-return$$, h: Shift}
+  Sym:
   - '!'
   - '@'
   - '#'
@@ -120,11 +62,11 @@ layers:
   - '1'
   - '2'
   - '3'
-  - ⌫
-  - {t: ▽, type: trans}
+  - $$mdi:backspace-outline$$
+  - {t: $$mdi:triangle-down-outline$$, type: trans}
   - {type: held}
   - ''
-  NAV:
+  Nav:
   - Win Close
   - Tab Left
   - Tab Right
@@ -138,7 +80,7 @@ layers:
   - Ctrl
   - {t: Win Prev, h: Gui}
   - {t: Win Next, h: Alt}
-  - {t: ↹, h: Shift}
+  - {t: $$mdi:keyboard-tab$$, h: Shift}
   - Vol Down
   - Home
   - ←
@@ -148,14 +90,14 @@ layers:
   - Cut
   - Copy
   - Paste
-  - ⌦
-  - ⏮️
-  - ⏭️
+  - $$mdi:backspace-reverse-outline$$
+  - $$mdi:skip-backward$$
+  - $$mdi:skip-forward$$
   - ''
   - {type: held}
-  - {t: ▽, type: trans}
-  - ␣
-  FUN:
+  - {t: $$mdi:triangle-down-outline$$, type: trans}
+  - $$mdi:keyboard-space$$
+  Function:
   - ''
   - F1
   - F2
@@ -163,9 +105,9 @@ layers:
   - F4
   - Out USB
   - Out BLE
-  - {t: DEF, h: toggle}
-  - {t: BRD, h: toggle}
-  - {t: GME, h: toggle}
+  - {t: Base, h: toggle}
+  - {t: Bird, h: toggle}
+  - {t: Gaming, h: toggle}
   - F5
   - F6
   - F7
@@ -182,14 +124,14 @@ layers:
   - Caps Lock
   - Print Scrn
   - Pause Break
-  - {t: Reset, h: Boot}
+  - Boot
   - {type: held}
   - {type: held}
-  - {t: Reset, h: Boot}
-  MSE:
-  - Forward Click
-  - Back Click
-  - Right Click
+  - Boot
+  Mouse:
+  - ''
+  - ''
+  - ''
   - ''
   - ''
   - Right Click
@@ -207,126 +149,106 @@ layers:
   - Mouse ↓
   - Mouse →
   - Scroll →
-  - Middle Click
-  - Left Click
+  - ''
+  - ''
   - {type: held}
   - Back Click
   - Middle Click
   - Forward Click
   - ''
-  - {t: ▽, type: trans}
+  - $$mdi:triangle-down-outline$$
   - Left Click
   - Right Click
 combos:
 - p: [2, 3]
   k: J
-  l: [DEF]
-- p: [2, 3]
-  k: Q
-  l: [BRD]
-- p: [1, 2]
-  k: V
-  l: [BRD]
+  l: [Base]
 - p: [6, 7]
   k: ;
-  l: [DEF, BRD, SYM]
-  draw_separate: true
+  l: [Base, Sym]
 - p: [7, 8]
   k: '`'
-  l: [DEF, BRD]
-  draw_separate: true
+  l: [Base]
 - p: [12, 13]
   k: (
-  l: [DEF, BRD]
-  draw_separate: true
+  l: [Base]
 - p: [16, 17]
   k: )
-  l: [DEF, BRD]
-  draw_separate: true
+  l: [Base]
 - p: [11, 12]
   k: '['
-  l: [DEF, BRD]
-  draw_separate: true
+  l: [Base]
 - p: [17, 18]
   k: ']'
-  l: [DEF, BRD]
-  draw_separate: true
+  l: [Base]
 - p: [11, 13]
-  k: ↹
-  l: [DEF, BRD, SYM]
+  k: $$mdi:keyboard-tab$$
+  l: [Base, Sym]
   draw_separate: true
 - p: [16, 18]
-  k: ⌦
-  l: [DEF, BRD, SYM]
+  k: $$mdi:backspace-reverse-outline$$
+  l: [Base, Sym]
   draw_separate: true
 - p: [11, 12, 13]
   k: Esc
-  l: [DEF, BRD, SYM]
+  l: [Base, Sym]
   draw_separate: true
 - p: [16, 17, 18]
-  k: ⏎
-  l: [DEF, BRD, SYM]
+  k: $$mdi:keyboard-return$$
+  l: [Base, Sym]
   draw_separate: true
 - p: [12, 13]
   k: '!'
-  l: [SYM]
+  l: [Sym]
 - p: [11, 12]
   k: '?'
-  l: [SYM]
+  l: [Sym]
 - p: [13, 16]
   k: Caps Word
-  l: [DEF, BRD]
+  l: [Base]
   draw_separate: true
 - p: [3, 4]
   k: Lock
-  l: [DEF, BRD]
+  l: [Base]
   draw_separate: true
 - p: [4, 14]
-  k: ⏯
-  l: [NAV]
+  k: $$mdi:play-pause$$
+  l: [Nav]
   a: right
 - p: [5, 15]
   k: Calc
-  l: [NAV]
+  l: [Nav]
   a: left
+- p: [4, 5]
+  k: Boot
+  l: [Function]
 - p: [20, 21]
   k: Z
-  l: [DEF, BRD]
+  l: [Base]
 - p: [21, 22]
   k: V
-  l: [DEF]
+  l: [Base]
 - p: [23, 24]
   k: \
-  l: [DEF, BRD]
-  draw_separate: true
+  l: [Base]
 - p: [24, 25]
   k: /
-  l: [DEF, BRD, SYM]
-  draw_separate: true
+  l: [Base, Sym]
 - p: [20, 21]
   k: Undo
-  l: [NAV]
-  a: bottom
-- p: [20, 21, 22]
-  k: {t: MSE, h: toggle}
-  l: [DEF, BRD, MSE]
+  l: [Nav]
   a: bottom
 - p: [24, 25]
-  k: BT CLR
-  l: [FUN]
+  k: BT Clr
+  l: [Function]
   a: bottom
 - p: [2, 7]
   k: Show Batt
-  l: [FUN]
+  l: [Function]
   a: top
-  o: 0.25
 - p: [3, 6]
   k: Show Conn
-  l: [FUN]
-  a: top
-- p: [4, 5]
-  k: Boot
-  l: [FUN]
+  l: [Function]
 - p: [26, 27]
   k: MSE
-  l: [DEF, BRD]
+  l: [Base]

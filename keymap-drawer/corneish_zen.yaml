@@ -1,4 +1,4 @@
-layout: {qmk_keyboard: corne_rotated, qmk_layout: LAYOUT_split_3x5_3}
+layout: {zmk_keyboard: corneish_zen, layout_name: foostan_corne_5col_layout}
 layers:
   DEF:
   - Q
@@ -117,11 +117,11 @@ layers:
   - '#'
   - $
   - '%'
-  - /
+  - ','
   - '7'
   - '8'
   - '9'
-  - ','
+  - ''
   - +
   - '='
   - _
@@ -158,10 +158,10 @@ layers:
   - Page Down
   - ↑
   - Page Up
-  - Calc
+  - ''
   - Ctrl
-  - Gui
-  - Alt
+  - {t: Win Prev, h: Gui}
+  - {t: Win Next, h: Alt}
   - {t: ↹, h: Shift}
   - Vol Down
   - Home
@@ -170,8 +170,8 @@ layers:
   - →
   - End
   - ''
-  - Win Prev
-  - Win Next
+  - Cut
+  - Copy
   - Paste
   - ⏯
   - ''
@@ -186,66 +186,66 @@ layers:
   - ␣
   - Alt
   FUN:
+  - ''
   - F1
   - F2
   - F3
   - F4
-  - F5
   - Out USB
   - Out BLE
   - {t: DEF, h: toggle}
   - {t: BRD, h: toggle}
   - {t: GME, h: toggle}
+  - F5
   - F6
   - F7
   - F8
   - F9
-  - F10
   - BT 1
   - BT 2
   - BT 3
   - BT 4
   - BT 5
   - ''
-  - Desk Left
-  - Desk Right
+  - F10
   - F11
   - F12
+  - ''
   - ''
   - Caps Lock
   - Print Scrn
   - Pause Break
   - ''
   - ''
-  - Boot
+  - {t: Reset, h: Boot}
   - {type: held}
   - {type: held}
-  - Boot
+  - {t: Reset, h: Boot}
   - ''
   MSE:
+  - Forward Click
+  - Back Click
+  - Right Click
   - ''
   - ''
-  - ''
-  - ''
-  - ''
-  - Scroll ←
+  - Right Click
   - Scroll ↓
   - Mouse ↑
   - Scroll ↑
-  - Scroll →
+  - ''
   - Ctrl
   - Gui
   - Alt
   - Shift
   - ''
-  - Right Click
+  - Scroll ←
   - Mouse ←
   - Mouse ↓
   - Mouse →
+  - Scroll →
   - ''
-  - ''
-  - ''
-  - ''
+  - Middle Click
+  - Left Click
   - {type: held}
   - ''
   - ''
@@ -255,7 +255,7 @@ layers:
   - ''
   - ''
   - ''
-  - ''
+  - {t: ▽, type: trans}
   - Left Click
   - Right Click
   - ''
@@ -309,6 +309,12 @@ combos:
   k: ⏎
   l: [DEF, BRD, SYM]
   draw_separate: true
+- p: [12, 13]
+  k: '!'
+  l: [SYM]
+- p: [11, 12]
+  k: '?'
+  l: [SYM]
 - p: [13, 16]
   k: Caps Word
   l: [DEF, BRD]
@@ -321,9 +327,10 @@ combos:
   k: ⏯
   l: [NAV]
   a: right
-- p: [4, 5]
-  k: Boot
-  l: [FUN]
+- p: [5, 15]
+  k: Calc
+  l: [NAV]
+  a: left
 - p: [21, 22]
   k: Z
   l: [DEF, BRD]
@@ -339,13 +346,29 @@ combos:
   l: [DEF, BRD, SYM]
   draw_separate: true
 - p: [21, 22]
-  k: F12
-  l: [FUN]
+  k: Undo
+  l: [NAV]
+  a: bottom
+- p: [21, 22, 23]
+  k: {t: MSE, h: toggle}
+  l: [DEF, BRD, MSE]
   a: bottom
 - p: [27, 28]
   k: BT CLR
   l: [FUN]
   a: bottom
+- p: [2, 7]
+  k: Show Batt
+  l: [FUN]
+  a: top
+  o: 0.25
+- p: [3, 6]
+  k: Show Conn
+  l: [FUN]
+  a: top
+- p: [4, 5]
+  k: Boot
+  l: [FUN]
 - p: [31, 32]
   k: MSE
   l: [DEF, BRD]

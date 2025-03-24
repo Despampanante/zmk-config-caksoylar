@@ -1,3 +1,4 @@
+layout: {zmk_keyboard: grumpybird}
 layers:
   DEF:
   - Q
@@ -92,11 +93,11 @@ layers:
   - '#'
   - $
   - '%'
-  - /
+  - ','
   - '7'
   - '8'
   - '9'
-  - ','
+  - ''
   - +
   - '='
   - _
@@ -125,10 +126,10 @@ layers:
   - Page Down
   - ↑
   - Page Up
-  - Calc
+  - ''
   - Ctrl
-  - Gui
-  - Alt
+  - {t: Win Prev, h: Gui}
+  - {t: Win Next, h: Alt}
   - {t: ↹, h: Shift}
   - Vol Down
   - Home
@@ -136,8 +137,8 @@ layers:
   - ↓
   - →
   - End
-  - Win Prev
-  - Win Next
+  - Cut
+  - Copy
   - Paste
   - ⌦
   - ⏮️
@@ -145,62 +146,62 @@ layers:
   - {type: held}
   - {t: ▽, type: trans}
   FUN:
+  - ''
   - F1
   - F2
   - F3
   - F4
-  - F5
   - Out USB
   - Out BLE
   - {t: DEF, h: toggle}
   - {t: BRD, h: toggle}
   - {t: GME, h: toggle}
+  - F5
   - F6
   - F7
   - F8
   - F9
-  - F10
   - BT 1
   - BT 2
   - BT 3
   - BT 4
   - BT 5
-  - Desk Left
-  - Desk Right
+  - F10
   - F11
+  - F12
   - Caps Lock
   - Print Scrn
   - Pause Break
   - {type: held}
   - {type: held}
   MSE:
+  - Forward Click
+  - Back Click
+  - Right Click
   - ''
   - ''
-  - ''
-  - ''
-  - ''
-  - Scroll ←
+  - Right Click
   - Scroll ↓
   - Mouse ↑
   - Scroll ↑
-  - Scroll →
+  - ''
   - Ctrl
   - Gui
   - Alt
   - Shift
   - ''
-  - Right Click
+  - Scroll ←
   - Mouse ←
   - Mouse ↓
   - Mouse →
-  - ''
-  - ''
-  - ''
+  - Scroll →
+  - Middle Click
+  - Left Click
   - {type: held}
   - Back Click
   - Middle Click
   - Forward Click
-  - ''
+  - {t: ▽, type: trans}
   - Left Click
 combos:
 - p: [2, 3]
@@ -252,6 +253,12 @@ combos:
   k: ⏎
   l: [DEF, BRD, SYM]
   draw_separate: true
+- p: [12, 13]
+  k: '!'
+  l: [SYM]
+- p: [11, 12]
+  k: '?'
+  l: [SYM]
 - p: [13, 16]
   k: Caps Word
   l: [DEF, BRD]
@@ -264,9 +271,10 @@ combos:
   k: ⏯
   l: [NAV]
   a: right
-- p: [4, 5]
-  k: Boot
-  l: [FUN]
+- p: [5, 15]
+  k: Calc
+  l: [NAV]
+  a: left
 - p: [20, 21]
   k: Z
   l: [DEF, BRD]
@@ -282,10 +290,26 @@ combos:
   l: [DEF, BRD, SYM]
   draw_separate: true
 - p: [20, 21]
-  k: F12
-  l: [FUN]
+  k: Undo
+  l: [NAV]
+  a: bottom
+- p: [20, 21, 22]
+  k: {t: MSE, h: toggle}
+  l: [DEF, BRD, MSE]
   a: bottom
 - p: [24, 25]
   k: BT CLR
   l: [FUN]
   a: bottom
+- p: [2, 7]
+  k: Show Batt
+  l: [FUN]
+  a: top
+  o: 0.25
+- p: [3, 6]
+  k: Show Conn
+  l: [FUN]
+  a: top
+- p: [4, 5]
+  k: Boot
+  l: [FUN]

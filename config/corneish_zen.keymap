@@ -1,9 +1,8 @@
-#define MOUSE_KEYS
 #include "keypos_def/keypos_36keys.h"
 #include "includes/3x5.dtsi"
 
 / {
     chosen {
-        zmk,matrix-transform = &five_column_transform;
+        zmk,physical-layout = &foostan_corne_5col_layout;
     };
 };
